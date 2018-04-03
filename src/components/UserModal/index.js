@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import {
   ActivityIndicator,
@@ -15,7 +15,7 @@ import styles from './styles';
 
 import * as UserModalActions from 'store/actions/userModal';
 
-const UserModal = ({ userModal }) => (
+const UserModal = ({ userModal, hideUserModal }) => (
   <Modal
     animationType="slide"
     onRequestClose={() => {
@@ -39,7 +39,7 @@ const UserModal = ({ userModal }) => (
         <View style={styles.containerButtons}>
           <TouchableOpacity
             style={[styles.button, styles.buttonCancel]}
-            onPress={() => { }}
+            onPress={() => hideUserModal()}
             activeOpacity={0.8}
           >
             <Text style={styles.buttonText}>Cancelar</Text>
