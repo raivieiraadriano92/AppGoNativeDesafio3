@@ -1,6 +1,7 @@
 const initialState = {
   coordinatesSelected: [],
   userModalVisible: false,
+  saving: false,
   users: [
     {
       id: 1,
@@ -39,10 +40,10 @@ export default function map(state = initialState, action) {
         userModalVisible: false,
         coordinatesSelected: [],
       };
-    case 'ADD_USER':
+    case 'SAVE_USER':
       return {
         ...state,
-        users: [...state, action.payload.newUser],
+        users: [...state, action.payload.user],
       };
     default:
       return state;

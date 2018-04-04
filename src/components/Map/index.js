@@ -16,6 +16,7 @@ class Map extends Component {
     map: PropTypes.shape({
       users: PropTypes.arrayOf(PropTypes.shape()).isRequired,
     }).isRequired,
+    showUserModal: PropTypes.func.isRequired,
   };
 
   renderUsers = () => this.props.map.users.map(user => (

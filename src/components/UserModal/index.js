@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -49,13 +50,22 @@ const UserModal = ({ map, hideUserModal }) => (
             onPress={() => { }}
             activeOpacity={0.8}
           >
-            <Text style={styles.buttonText}>Salvar</Text>
+            {map.saving
+              ? <ActivityIndicator size="small" />
+              : <Text style={styles.buttonText}>Salvar</Text>}
           </TouchableOpacity>
         </View>
       </View>
     </View>
   </Modal>
 );
+
+UserModal.propTypes = {
+  map: PropTypes.shape({
+    users: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  }).isRequired,
+  hideUserModal: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
   map: state.map,

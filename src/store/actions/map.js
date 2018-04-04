@@ -1,5 +1,5 @@
-export const addUser = payload => ({
-  type: 'ADD_USER',
+export const saveUser = payload => ({
+  type: 'SAVE_USER',
   payload,
 });
 
