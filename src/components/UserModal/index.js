@@ -13,16 +13,16 @@ import {
 } from 'react-native';
 import styles from './styles';
 
-import * as UserModalActions from 'store/actions/userModal';
+import * as MapActions from 'store/actions/map';
 
-const UserModal = ({ userModal, hideUserModal }) => (
+const UserModal = ({ map, hideUserModal }) => (
   <Modal
     animationType="slide"
     onRequestClose={() => {
       alert('Modal has been closed.');
     }}
     transparent
-    visible={userModal.visible}
+    visible={map.userModalVisible}
   >
     <View style={styles.container}>
       <View style={styles.content}>
@@ -58,9 +58,9 @@ const UserModal = ({ userModal, hideUserModal }) => (
 );
 
 const mapStateToProps = state => ({
-  userModal: state.userModal,
+  map: state.map,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(UserModalActions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(MapActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserModal);

@@ -9,17 +9,26 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: metrics.baseRadius,
     padding: metrics.basePadding,
-    maxWidth: 250,
+    width: 250,
   },
   calloutTitle: {
     fontWeight: 'bold',
     fontSize: 16,
     color: colors.darker,
   },
-
   calloutSubtitle: {
     fontSize: 12,
     color: colors.regular,
+  },
+  containerAvatar: {
+    borderRadius: 32,
+    padding: 5,
+    backgroundColor: colors.white,
+  },
+  avatar: {
+    width: 37,
+    height: 37,
+    borderRadius: 32,
   },
 });
 
