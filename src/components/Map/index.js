@@ -7,7 +7,7 @@ import styles from './styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as MapActions from 'store/actions/map';
+import { Creators as MapActions } from 'store/ducks/map';
 
 Mapbox.setAccessToken('pk.eyJ1IjoicmFpdmllaXJhYWRyaWFubzkyIiwiYSI6ImNqZmFpOGlqZTBhdTMycW1zZGRsYzE2YmEifQ.jBNz09mY9gor2_pT2RfT5w');
 
@@ -25,8 +25,6 @@ class Map extends Component {
       id={`user_${user.id}`}
       coordinate={user.coordinates}
     >
-
-
       <View style={styles.containerAvatar}>
         <Image style={styles.avatar} source={{ uri: user.avatar }} />
       </View>
@@ -45,7 +43,7 @@ class Map extends Component {
       <View style={styles.mapView}>
         <Mapbox.MapView
           centerCoordinate={[-49.645, -27.217]}
-          onLongPress={({ geometry: { coordinates } }) => this.props.showUserModal({ coordinatesSelected: coordinates })}
+          onLongPress={({ geometry: { coordinates } }) => this.props.showUserModal(coordinates)}
           style={styles.mapView}
           styleURL={Mapbox.StyleURL.Street}
           zoomLevel={15}

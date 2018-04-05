@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     color: colors.darker,
     fontSize: 18,
     fontWeight: 'bold',
+    marginBottom: metrics.baseMargin * 2,
   },
 
   input: {
@@ -34,7 +35,6 @@ const styles = StyleSheet.create({
     borderColor: colors.light,
     borderRadius: metrics.baseRadius,
     paddingHorizontal: metrics.basePadding,
-    marginTop: metrics.baseMargin * 2,
   },
 
   containerButtons: {
@@ -66,6 +66,19 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontWeight: 'bold',
     fontSize: 14,
+  },
+
+  error: {
+    alignSelf: 'stretch',
+    backgroundColor: colors.danger,
+    paddingVertical: metrics.basePadding / 2,
+    paddingHorizontal: metrics.basePadding,
+    borderRadius: metrics.baseRadius,
+    marginBottom: metrics.baseMargin,
+  },
+
+  errorText: {
+    color: colors.darkTransparent,
   },
 });
 

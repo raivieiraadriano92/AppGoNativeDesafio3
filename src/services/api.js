@@ -1,11 +1,7 @@
-import { create } from 'apisauce';
+import axios from 'axios';
 
-const api = create({
+const api = axios.create({
   baseURL: 'https://api.github.com',
-});
-
-api.addResponseTransform((response) => {
-  if (!response.ok) throw response;
 });
 
 export default api;

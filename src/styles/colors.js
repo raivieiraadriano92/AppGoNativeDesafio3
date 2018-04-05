@@ -9,6 +9,7 @@ export default {
 
   primary: '#CCC',
   success: '#85C47C',
+  danger: '#E37A7A',
 
   transparent: 'transparent',
   whiteTransparent: 'rgba(255, 255, 255, 0.2)',
